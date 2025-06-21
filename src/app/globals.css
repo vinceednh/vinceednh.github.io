@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-display: "Poppins", "sans-serif";
 
   --color-bg-black-100: #141212;
   --color-bg-gray-100: #1f1f1f;
   --color-bg-white-100: #e7e6e3;
+  --color-black-111: #111111;
+  --color-black-252: #252423;
   --color-gray-100: #2b2a29;
   --color-white-100: #f9f9f9;
   --color-purple-100: #7c3aed;
+  --color-blue-100: #0bc5e2;
 }
 
 @layer base {
@@ -39,5 +42,50 @@
   }
   .color-purple-100 {
     color: var(--color-purple-100);
+  }
+  .color-blue-100 {
+    color: var(--color-blue-100);
+  }
+  .bg-black-111 {
+    background-color: var(--color-black-111);
+  }
+  .bg-black-252 {
+    background-color: var(--color-black-252);
+  }
+}
+
+@layer utilities {
+  .hover-highlight {
+    position: relative;
+    padding: 0.8rem 1.5rem; /* adjust size */
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .hover-highlight:hover {
+    background-color: rgba(51, 51, 51, 0.25);
+  }
+
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-blue-100);
+    border-radius: 1px;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      height 0.3s ease;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center; /* grow from center */
+  }
+  .hover-underline:hover::after {
+    opacity: 1;
+    height: 4px;
+    transform: scaleX(1);
   }
 }
