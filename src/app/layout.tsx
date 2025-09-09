@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import Banner from "@/components/banner";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className={poppins.className}>
         <ReactQueryClientProvider>
           <Navigation />
-          {children}
+          <main className="z-0 -mt-16">
+            <Banner />
+            {children}
+          </main>
           <Footer />
         </ReactQueryClientProvider>
       </body>
