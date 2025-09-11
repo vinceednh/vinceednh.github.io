@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className="relative h-[500px] w-screen">
       <Image
-        src="/home/top-banner.png"
+        src="/home/home-banner.webp"
         alt="Banner"
         fill
         style={{ objectFit: "cover" }}
