@@ -1,9 +1,7 @@
+import Intro from "@/components/intro";
+
 const Home = () => {
-  return (
-    <div className="flex h-screen w-full items-center justify-center">
-      Hello World!
-    </div>
-  );
+  return <Intro />;
 };
 
 export default Home;
