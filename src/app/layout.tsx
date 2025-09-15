@@ -19,10 +19,10 @@ type LayoutProps = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.className} flex min-h-screen flex-col`}>
         <ReactQueryClientProvider>
           <Navigation />
-          <main className="z-0 -mt-16">
+          <main className="relative z-0 flex-grow">
             <Banner />
             {children}
           </main>
