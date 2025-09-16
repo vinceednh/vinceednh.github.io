@@ -20,7 +20,7 @@ const Intro = () => {
         <motion.h2
           {...fadeInFromLeft}
           transition={{ ...fadeInFromLeft.transition, delay: 0.2 }}
-          className="text-2xl font-semibold"
+          className="color-blue-100 text-2xl font-semibold"
         >
           Game Programmer
         </motion.h2>
