@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,14 +32,16 @@ const Navigation = () => {
         </button>
 
         <div className="hidden space-x-10 md:flex">
-          <button
-            className="hover-highlight hover-underline px-5 py-2 text-sm font-semibold"
-            onClick={() => {
-              // TODO: react-scroll
-            }}
+          {/* Projects scroll */}
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            duration={500}
+            offset={-80} // adjust for navbar height
+            className="hover-highlight hover-underline cursor-pointer px-5 py-2 text-sm font-semibold"
           >
             GAMES/PROJECTS
-          </button>
+          </ScrollLink>
           <button
             className="hover-highlight hover-underline px-3 py-2 text-sm font-semibold"
             onClick={() => {
