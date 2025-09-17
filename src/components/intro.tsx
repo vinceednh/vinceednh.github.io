@@ -12,7 +12,7 @@ const fadeInFromLeft = {
 
 const Intro = () => {
   return (
-    <div className="text-white-100 relative flex items-center justify-between px-8 py-10 md:px-16">
+    <div className="text-white-100 relative flex items-center justify-between px-8 py-15 md:px-16">
       <div className="flex max-w-xl flex-col gap-6">
         <motion.h1 {...fadeInFromLeft} className="text-5xl font-bold">
           Vincent Dinh

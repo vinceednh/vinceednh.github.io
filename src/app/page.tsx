@@ -1,7 +1,11 @@
 import Intro from "@/components/intro";
+import Projects from "@/components/Projects";
 
-const Home = () => {
-  return <Intro />;
-};
-
-export default Home;
+export default function Home() {
+  return (
+    <div>
+      <Intro />
+      <Projects />
+    </div>
+  );
+}
