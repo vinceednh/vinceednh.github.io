@@ -1,4 +1,4 @@
-import acm from "@/public/projects/ACM.png";
+import acm from "@/public/projects/ACM.webp";
 import white from "@/public/projects/WhiteBG.webp";
 import {
   /*SiUnrealengine, SiCplusplus,*/ SiReact,
