@@ -14,20 +14,20 @@ const Intro = () => {
   return (
     <div className="text-white-100 relative flex items-center justify-between px-8 py-20 md:px-16">
       <div className="flex max-w-xl flex-col gap-6">
-        <motion.h1 {...fadeInFromLeft} className="text-5xl font-bold">
+        <motion.h1 {...fadeInFromLeft} className="text-6xl font-bold">
           Vincent Dinh
         </motion.h1>
         <motion.h2
           {...fadeInFromLeft}
           transition={{ ...fadeInFromLeft.transition, delay: 0.2 }}
-          className="color-blue-100 text-2xl font-semibold"
+          className="color-blue-100 text-3xl font-semibold"
         >
           Game Programmer
         </motion.h2>
         <motion.p
           {...fadeInFromLeft}
           transition={{ ...fadeInFromLeft.transition, delay: 0.4 }}
-          className="text-lg"
+          className="text-xl"
         >
           Aspiring Game Developer, learning Unreal Engine 5 and building
           interactive gameplay systems. Skilled in C++ and web technologies,
