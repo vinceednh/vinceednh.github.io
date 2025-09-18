@@ -82,13 +82,13 @@ const Projects = () => {
         <div className="flex gap-4">
           <button
             onClick={prevPage}
-            className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
+            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
           >
             <FaCaretLeft />
           </button>
           <button
             onClick={nextPage}
-            className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
+            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
           >
             <FaCaretRight />
           </button>
