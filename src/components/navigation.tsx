@@ -42,22 +42,28 @@ const Navigation = () => {
           >
             GAMES/PROJECTS
           </ScrollLink>
-          <button
-            className="hover-highlight hover-underline px-3 py-2 text-sm font-semibold"
-            onClick={() => {
-              // TODO: react-scroll
-            }}
+
+          {/* Experience scroll */}
+          <ScrollLink
+            to="experience"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="hover-highlight hover-underline cursor-pointer px-5 py-2 text-sm font-semibold"
           >
             EXPERIENCE
-          </button>
-          <button
-            className="hover-highlight hover-underline px-3 py-2 text-sm font-semibold"
-            onClick={() => {
-              // TODO: react-scroll
-            }}
+          </ScrollLink>
+
+          {/* Skills scroll */}
+          <ScrollLink
+            to="skills"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="hover-highlight hover-underline cursor-pointer px-5 py-2 text-sm font-semibold"
           >
             SKILLS
-          </button>
+          </ScrollLink>
         </div>
       </div>
     </nav>
