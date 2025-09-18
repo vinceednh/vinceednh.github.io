@@ -25,7 +25,7 @@ const sliderVariants = {
   }),
 };
 
-const ProjectsCarousel = () => {
+const Projects = () => {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [projectsPerPage, setProjectsPerPage] = useState(6);
@@ -77,19 +77,18 @@ const ProjectsCarousel = () => {
       animate={loaded ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
     >
-      {/* Title + arrows */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-5xl font-semibold">GAMES / PROJECTS</h1>
         <div className="flex gap-4">
           <button
             onClick={prevPage}
-            className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
+            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
           >
             <FaCaretLeft />
           </button>
           <button
             onClick={nextPage}
-            className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
+            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
           >
             <FaCaretRight />
           </button>
@@ -135,7 +134,7 @@ const ProjectsCarousel = () => {
               setDirection(idx > page ? 1 : -1);
               setPage(idx);
             }}
-            className={`h-3 w-3 rounded-full transition-colors duration-300 ${
+            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
               idx === page ? "bg-blue-100" : "bg-gray-500"
             }`}
           />
@@ -145,4 +144,4 @@ const ProjectsCarousel = () => {
   );
 };
 
-export default ProjectsCarousel;
+export default Projects;
