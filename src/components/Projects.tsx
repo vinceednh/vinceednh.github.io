@@ -1,12 +1,15 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { AnimatePresence, motion, wrap } from "motion/react";
 import projects from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   const [page, setPage] = useState(0);
   const [projectsPerPage, setProjectsPerPage] = useState(6);
+  const [direction, setDirection] = useState<1 | -1>(1);
 
   useEffect(() => {
     const updateProjectsPerPage = () => {
@@ -19,9 +22,17 @@ const Projects = () => {
 
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 
-  const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
-  const handleNext = () =>
-    setPage((prev) => Math.min(prev + 1, totalPages - 1));
+  const handlePrev = () => {
+    const nextPage = wrap(0, totalPages, page - 1);
+    setDirection(-1);
+    setPage(nextPage);
+  };
+
+  const handleNext = () => {
+    const nextPage = wrap(0, totalPages, page + 1);
+    setDirection(1);
+    setPage(nextPage);
+  };
 
   const currentProjects = projects.slice(
     page * projectsPerPage,
@@ -36,19 +47,39 @@ const Projects = () => {
           <FaArrowLeft
             size={30}
             onClick={handlePrev}
-            className={`cursor-pointer ${page === 0 ? "pointer-events-none opacity-50" : ""}`}
+            className={`cursor-pointer transition-colors duration-200 hover:text-blue-100 ${page === 0 ? "pointer-events-none opacity-50" : ""}`}
           />
           <FaArrowRight
             size={30}
             onClick={handleNext}
-            className={`cursor-pointer ${page === totalPages - 1 ? "pointer-events-none opacity-50" : ""}`}
+            className={`cursor-pointer transition-colors duration-200 hover:text-blue-100 ${page === totalPages - 1 ? "pointer-events-none opacity-50" : ""}`}
           />
         </div>
       </div>
-      <div className={`grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2`}>
-        {currentProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+
+      <div className="relative overflow-hidden">
+        <AnimatePresence custom={direction} mode="popLayout">
+          <motion.div
+            key={page}
+            custom={direction}
+            initial={{ x: direction * 300, opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: { duration: 0.3, ease: "easeInOut" },
+            }}
+            exit={{
+              x: direction * -300,
+              opacity: 0,
+              transition: { duration: 0.3, ease: "easeInOut" },
+            }}
+            className="grid grid-cols-1 gap-6 pt-3 md:grid-cols-3 md:grid-rows-2"
+          >
+            {currentProjects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
