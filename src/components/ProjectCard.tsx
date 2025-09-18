@@ -31,12 +31,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div
       className="relative h-80 w-full cursor-pointer overflow-hidden rounded-xl shadow-lg md:h-96"
-      whileHover={{ scale: 1.03 }}
-      whileFocus={{ scale: 1.03 }}
       onClick={() => setIsOpen((prev) => !prev)}
       onHoverStart={() => setIsHover(true)}
       onHoverEnd={() => setIsHover(false)}
       tabIndex={0}
+      animate={{
+        scale: isHover || isOpen ? 1.02 : 1,
+      }}
+      transition={{ duration: 0.3, ease: easeInOut }}
     >
       <div className="h-full w-full">
         <Image src={image} alt={title} className="h-full w-full object-cover" />
@@ -44,9 +46,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <motion.div
         className="text-white-100 absolute bottom-0 left-0 flex h-full w-full flex-col justify-between bg-black/50 p-6"
+        initial={false}
         animate={{
-          opacity: isOpen || isHover ? 1 : 0,
-          y: isOpen || isHover ? 0 : "100%",
+          opacity: isHover || isOpen ? 1 : 0,
+          y: isHover || isOpen ? 0 : "100%",
         }}
         transition={{ duration: 0.5, ease: easeInOut }}
       >
@@ -60,6 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
         </div>
+
         <div className="mt-4 flex justify-end gap-4 text-3xl">
           <Link
             href={github}
