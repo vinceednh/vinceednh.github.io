@@ -186,22 +186,6 @@ const projects = [
     github: "https://github.com/acm-ucr/acm-atlas",
     link: "https://acm.cs.ucr.edu/",
   },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
 ];
 
 export default projects;

@@ -5,6 +5,7 @@ import { motion, AnimatePresence, Transition } from "motion/react";
 import { wrap } from "@popmotion/popcorn";
 import projects from "@/data/projects";
 import ProjectCard from "./ProjectCard";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
 
 const sliderTransition: Transition = {
   type: "tween",
@@ -31,6 +32,7 @@ const ProjectsCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const slideRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const updateProjectsPerPage = () => {
@@ -54,6 +56,10 @@ const ProjectsCarousel = () => {
     }
   }, [currentProjects]);
 
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   const nextPage = () => {
     setDirection(1);
     setPage((prev) => wrap(0, totalPages, prev + 1));
@@ -65,7 +71,13 @@ const ProjectsCarousel = () => {
   };
 
   return (
-    <div className="bg-gray-100 px-8 py-20 md:px-16">
+    <motion.div
+      className="bg-gray-100 px-8 py-20 md:px-16"
+      initial={{ opacity: 0, y: 20 }}
+      animate={loaded ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Title + arrows */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-5xl font-semibold">GAMES / PROJECTS</h1>
         <div className="flex gap-4">
@@ -73,16 +85,17 @@ const ProjectsCarousel = () => {
             onClick={prevPage}
             className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
           >
-            ◀
+            <FaCaretLeft />
           </button>
           <button
             onClick={nextPage}
             className="cursor-pointer text-4xl transition-colors duration-200 hover:text-blue-100"
           >
-            ▶
+            <FaCaretRight />
           </button>
         </div>
       </div>
+
       <div
         className="relative w-full overflow-hidden"
         style={{ height: containerHeight }}
@@ -101,12 +114,34 @@ const ProjectsCarousel = () => {
             className="absolute top-0 left-0 grid w-full grid-cols-1 gap-6 pt-3 md:grid-cols-3 md:grid-rows-2"
           >
             {currentProjects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <ProjectCard {...project} />
+              </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+
+      <div className="mt-8 flex justify-center gap-3">
+        {Array.from({ length: totalPages }).map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              setDirection(idx > page ? 1 : -1);
+              setPage(idx);
+            }}
+            className={`h-3 w-3 rounded-full transition-colors duration-300 ${
+              idx === page ? "bg-blue-100" : "bg-gray-500"
+            }`}
+          />
+        ))}
+      </div>
+    </motion.div>
   );
 };
 
