@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <motion.div
-        className="text-white-100 absolute bottom-0 left-0 flex h-full w-full flex-col justify-between bg-black/50 p-6"
+        className="text-white-100 absolute bottom-0 left-0 flex h-full w-full flex-col justify-between bg-black/75 p-6"
         initial={false}
         animate={{
           opacity: isHover || isOpen ? 1 : 0,
