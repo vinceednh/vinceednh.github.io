@@ -36,8 +36,17 @@ const Projects = () => {
 
   useEffect(() => {
     const updateProjectsPerPage = () => {
-      setProjectsPerPage(window.innerWidth < 768 ? 2 : 6);
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setProjectsPerPage(1 * 2);
+      } else if (width < 1280) {
+        setProjectsPerPage(3 * 2);
+      } else {
+        setProjectsPerPage(4 * 1);
+      }
     };
+
     updateProjectsPerPage();
     window.addEventListener("resize", updateProjectsPerPage);
     return () => window.removeEventListener("resize", updateProjectsPerPage);
@@ -110,7 +119,7 @@ const Projects = () => {
             animate="active"
             exit="exit"
             transition={sliderTransition}
-            className="absolute top-0 left-0 grid w-full grid-cols-1 gap-6 pt-3 md:grid-cols-3 md:grid-rows-2"
+            className="absolute top-0 left-0 grid w-full grid-cols-1 grid-rows-2 gap-6 pt-3 md:grid-cols-3 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-1"
           >
             {currentProjects.map((project, index) => (
               <motion.div
@@ -134,7 +143,7 @@ const Projects = () => {
               setDirection(idx > page ? 1 : -1);
               setPage(idx);
             }}
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
+            className={`h-2 w-2 cursor-pointer rounded-full transition-colors duration-300 ${
               idx === page ? "bg-blue-100" : "bg-gray-500"
             }`}
           />
