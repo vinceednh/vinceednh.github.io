@@ -14,7 +14,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover-highlight"
           >
-            GitHub
+            GITHUB
           </a>
           <a
             href="https://www.linkedin.com/in/vincent-dnh/"
@@ -22,7 +22,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover-highlight"
           >
-            LinkedIn
+            LINKEDIN
           </a>
           <a
             href="/resume.pdf"
@@ -30,7 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover-highlight"
           >
-            Resume
+            RESUME
           </a>
         </div>
       </div>
