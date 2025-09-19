@@ -81,6 +81,7 @@ const Projects = () => {
 
   return (
     <motion.div
+      id="projects"
       className="bg-gray-100 px-8 py-20 md:px-16"
       initial={{ opacity: 0, y: 20 }}
       animate={loaded ? { opacity: 1, y: 0 } : {}}

@@ -4,13 +4,13 @@ import { motion } from "motion/react";
 import experiences from "@/data/experiences";
 import ExperienceCard from "./ExperienceCard";
 
-const Experience = () => {
+const Experiences = () => {
   return (
     <section
       className="bg-white-100 w-full px-8 py-20 text-gray-100 md:px-16"
-      id="experience"
+      id="experiences"
     >
-      <h2 className="mb-10 text-5xl font-semibold">EXPERIENCE</h2>
+      <h2 className="mb-10 text-5xl font-semibold">EXPERIENCES</h2>
 
       <motion.div
         className="flex flex-col gap-8"
@@ -41,4 +41,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Experiences;
