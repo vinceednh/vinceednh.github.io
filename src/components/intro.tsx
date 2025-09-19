@@ -35,7 +35,7 @@ const Intro = () => {
         </motion.p>
       </div>
 
-      <div className="mt-8 flex justify-center gap-6 md:mt-0 md:flex-col md:justify-start">
+      <div className="mt-8 flex justify-center gap-8 md:mt-0 md:flex-col md:justify-start">
         <motion.a
           href="https://linkedin.com/in/vincent-dnh"
           target="_blank"
