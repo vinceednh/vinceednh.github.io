@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="bg-black-252 text-white-100 w-full py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between px-6 md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between px-4 md:flex-row">
         <div className="flex flex-col items-center text-sm">
           <p>&copy; {new Date().getFullYear()} Vincent Dinh</p>
           <p>Last updated: Sept 2025</p>
