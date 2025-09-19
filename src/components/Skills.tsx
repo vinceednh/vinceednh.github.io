@@ -28,13 +28,15 @@ const Skills = () => {
               flex: idx === 0 ? 1.3 : 1,
             }}
           >
-            <h3 className="mb-2 text-center text-xl font-semibold text-gray-100">
+            <h3 className="mb-2 text-center text-2xl font-semibold text-gray-100">
               {skill.title}
             </h3>
-            <p className="mb-4 text-center text-gray-100">{skill.list}</p>
+            <p className="mb-4 text-center text-lg text-gray-100">
+              {skill.list}
+            </p>
             <div className="flex justify-center gap-3">
               {skill.icons.map((icon, i) => (
-                <div key={i} className="h-8 w-8">
+                <div key={i} className="h-13 w-13">
                   <Image
                     src={icon}
                     alt={`${skill.title} icon`}
@@ -60,13 +62,15 @@ const Skills = () => {
               flex: idx === 1 ? 1.3 : 1,
             }}
           >
-            <h3 className="mb-2 text-center text-xl font-semibold text-gray-100">
+            <h3 className="mb-2 text-center text-2xl font-semibold text-gray-100">
               {skill.title}
             </h3>
-            <p className="mb-4 text-center text-gray-100">{skill.list}</p>
+            <p className="mb-4 text-center text-lg text-gray-100">
+              {skill.list}
+            </p>
             <div className="flex justify-center gap-3">
               {skill.icons.map((icon, i) => (
-                <div key={i} className="h-8 w-8">
+                <div key={i} className="h-13 w-13">
                   <Image
                     src={icon}
                     alt={`${skill.title} icon`}

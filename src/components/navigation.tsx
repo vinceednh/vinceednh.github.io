@@ -32,18 +32,16 @@ const Navigation = () => {
         </button>
 
         <div className="hidden space-x-10 md:flex">
-          {/* Projects scroll */}
           <ScrollLink
             to="projects"
             smooth={true}
             duration={500}
-            offset={-80} // adjust for navbar height
+            offset={-80}
             className="hover-highlight hover-underline cursor-pointer px-5 py-2 text-sm font-semibold"
           >
             GAMES/PROJECTS
           </ScrollLink>
 
-          {/* Experience scroll */}
           <ScrollLink
             to="experience"
             smooth={true}
@@ -54,7 +52,6 @@ const Navigation = () => {
             EXPERIENCE
           </ScrollLink>
 
-          {/* Skills scroll */}
           <ScrollLink
             to="skills"
             smooth={true}
