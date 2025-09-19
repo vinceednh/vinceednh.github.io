@@ -23,7 +23,6 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
 }) => {
   return (
     <div className="flex w-full flex-col items-start gap-8 text-gray-100 md:flex-row">
-      {/* Icon */}
       <div className="h-16 w-16 flex-shrink-0">
         <Image
           src={icon}
@@ -32,9 +31,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
         />
       </div>
 
-      {/* Main Info */}
       <div className="flex flex-1 flex-col gap-5">
-        {/* Company & Position */}
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex flex-col gap-4 md:gap-5">
             <p className="text-3xl font-semibold">{company}</p>
@@ -47,7 +44,6 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
           </div>
         </div>
 
-        {/* Description */}
         <ul className="md:text-md flex list-inside list-disc flex-col gap-2 md:gap-5">
           {description.map((point, idx) => (
             <li key={idx}>{point}</li>
