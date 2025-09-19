@@ -57,7 +57,7 @@
 @layer utilities {
   .hover-highlight {
     position: relative;
-    padding: 0.8rem 1.5rem; /* adjust size */
+    padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
   }
@@ -81,7 +81,7 @@
       height 0.3s ease;
     opacity: 0;
     transform: scaleX(0);
-    transform-origin: center; /* grow from center */
+    transform-origin: center;
   }
   .hover-underline:hover::after {
     opacity: 1;
