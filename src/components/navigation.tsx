@@ -43,13 +43,13 @@ const Navigation = () => {
           </ScrollLink>
 
           <ScrollLink
-            to="experience"
+            to="experiences"
             smooth={true}
             duration={500}
             offset={-80}
             className="hover-highlight hover-underline cursor-pointer px-5 py-2 text-sm font-semibold"
           >
-            EXPERIENCE
+            EXPERIENCES
           </ScrollLink>
 
           <ScrollLink
