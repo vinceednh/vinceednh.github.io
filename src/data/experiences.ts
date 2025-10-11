@@ -5,17 +5,17 @@ import bobaful from "../../public/icons/Bobaful.svg";
 
 const experiences = [
   {
-    company: "ACM@UCR",
-    position: "ACM Spark",
+    company: "University of California, Riverside",
+    position: "Teaching Assistant - Python Grader",
     location: "Riverside, CA",
-    duration: "Mar 2025 - Jun 2025",
+    duration: "Oct 2024 - Present",
     description: [
-      "Collaborating in an Agile team to design and develop the official ACM@UCR website.",
-      "Building dynamic, responsive interfaces using React, Tailwind CSS, and TypeScript.",
-      "Participating in weekly sprint meetings to share progress, perform code reviews, and ensure project milestones are met.",
-      "Utilizing Git and GitHub for version control and collaborative development.",
+      "Grading Python assignments for introductory computer science courses with attention to code logic, readability, and efficiency using Gradescope.",
+      "Importing and managing student grades between ZyBooks and Canvas to maintain accurate records.",
+      "Participating in weekly update meetings with the course instructor to review grading consistency, clarify expectations, and discuss student progress.",
+      "Providing constructive feedback to students and assisting with debugging and conceptual understanding as needed.",
     ],
-    icon: acm,
+    icon: ucr,
   },
   {
     company: "GameSpawn",
@@ -31,17 +31,17 @@ const experiences = [
     icon: gamespawn,
   },
   {
-    company: "University of California, Riverside",
-    position: "Teaching Assistant - Python Grader",
+    company: "ACM@UCR",
+    position: "ACM Spark",
     location: "Riverside, CA",
-    duration: "Oct 2024 - Present",
+    duration: "Mar 2025 - Jun 2025",
     description: [
-      "Grading Python assignments for introductory computer science courses with attention to code logic, readability, and efficiency using Gradescope.",
-      "Importing and managing student grades between ZyBooks and Canvas to maintain accurate records.",
-      "Participating in weekly update meetings with the course instructor to review grading consistency, clarify expectations, and discuss student progress.",
-      "Providing constructive feedback to students and assisting with debugging and conceptual understanding as needed.",
+      "Collaborating in an Agile team to design and develop the official ACM@UCR website.",
+      "Building dynamic, responsive interfaces using React, Tailwind CSS, and TypeScript.",
+      "Participating in weekly sprint meetings to share progress, perform code reviews, and ensure project milestones are met.",
+      "Utilizing Git and GitHub for version control and collaborative development.",
     ],
-    icon: ucr,
+    icon: acm,
   },
   {
     company: "Bobaful",
