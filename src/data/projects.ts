@@ -1,7 +1,10 @@
 import acm from "@/public/projects/ACM.webp";
-import white from "@/public/projects/WhiteBG.webp";
+import unload from "@/public/projects/Unload.webp";
+import shootergame from "@/public/projects/ShooterGame.webp";
 import {
-  /*SiUnrealengine, SiCplusplus,*/ SiReact,
+  SiUnrealengine,
+  SiCplusplus,
+  SiReact,
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
@@ -27,164 +30,19 @@ const projects = [
     link: "https://acm.cs.ucr.edu/",
   },
   {
-    title: "ACM Website",
-    image: white,
+    title: "Unload (WIP)",
+    image: unload,
     description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
+      "A work-in-progress game developed by a team using Unreal Engine blueprints.",
+    icons: [SiUnrealengine],
+    github: "https://https://github.com/HiImCVH/Unload",
   },
   {
-    title: "ACM Website",
-    image: acm,
+    title: "3D Shooter Game",
+    image: shootergame,
     description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: white,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: white,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
-  },
-  {
-    title: "ACM Website",
-    image: acm,
-    description:
-      "ACM@UCR’s official website built with Next.js and Tailwind CSS.",
-    icons: [
-      SiNextdotjs,
-      SiTypescript,
-      SiTailwindcss,
-      SiReact,
-      SiEslint,
-      SiPrettier,
-    ],
-    github: "https://github.com/acm-ucr/acm-atlas",
-    link: "https://acm.cs.ucr.edu/",
+      "A simple 3D shooter game developed using Unreal Engine C++. Course project from GameDev.tv, with added features.",
+    icons: [SiUnrealengine, SiCplusplus],
   },
 ];
 
