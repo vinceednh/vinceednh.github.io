@@ -13,7 +13,7 @@ interface ProjectCardProps {
   image: StaticImageData;
   description: string;
   icons: ElementType[];
-  github: string;
+  github?: string;
   link?: string;
 }
 
@@ -65,14 +65,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <div className="mt-4 flex justify-end gap-4 text-3xl">
-          <Link
-            href={github}
-            target="_blank"
-            rel="noreferrer"
-            className="cursor-pointer transition-colors duration-200 hover:text-blue-100"
-          >
-            <BsGithub />
-          </Link>
+          {github && (
+            <Link
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer transition-colors duration-200 hover:text-blue-100"
+            >
+              <BsGithub />
+            </Link>
+          )}
           {link && (
             <Link
               href={link}
