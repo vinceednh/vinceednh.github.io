@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between px-4 md:flex-row">
         <div className="flex flex-col items-center text-sm">
           <p>&copy; {new Date().getFullYear()} Vincent Dinh</p>
-          <p>Last updated: Sept 2025</p>
+          <p>Last updated: Oct 2025</p>
         </div>
 
         <div className="mt-4 flex space-x-6 md:mt-0">
