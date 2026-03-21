@@ -1,8 +1,10 @@
 "use client";
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { FaLinkedin, FaFileCsv } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
+import { FaRegFilePdf } from "react-icons/fa6";
 
 const fadeInFromLeft = {
   initial: { opacity: 0, x: -50 },
@@ -11,6 +13,8 @@ const fadeInFromLeft = {
 };
 
 const Intro = () => {
+  const [showEmail, setShowEmail] = useState(false);
+
   return (
     <div className="text-white-100 relative flex flex-col items-center justify-between px-8 py-20 md:flex-row md:items-start md:px-16">
       <div className="flex max-w-xl flex-col gap-6">
@@ -36,6 +40,7 @@ const Intro = () => {
       </div>
 
       <div className="mt-8 flex justify-center gap-8 md:mt-0 md:flex-col md:justify-start">
+        {/* LinkedIn */}
         <motion.a
           href="https://linkedin.com/in/vincent-dnh"
           target="_blank"
@@ -46,6 +51,8 @@ const Intro = () => {
         >
           <FaLinkedin size={40} />
         </motion.a>
+
+        {/* GitHub */}
         <motion.a
           href="https://github.com/vinceednh"
           target="_blank"
@@ -56,6 +63,8 @@ const Intro = () => {
         >
           <BsGithub size={40} />
         </motion.a>
+
+        {/* Resume */}
         <motion.a
           href="/resume.pdf"
           target="_blank"
@@ -64,16 +73,26 @@ const Intro = () => {
           {...fadeInFromLeft}
           transition={{ ...fadeInFromLeft.transition, delay: 0.8 }}
         >
-          <FaFileCsv size={40} />
+          <FaRegFilePdf size={40} />
         </motion.a>
-        <motion.a
-          href="mailto:vincent.dinh401@gmail.com"
-          className="text-white-100 transition-colors duration-300 hover:scale-110 hover:text-red-400"
-          {...fadeInFromLeft}
-          transition={{ ...fadeInFromLeft.transition, delay: 0.9 }}
-        >
-          <CiMail size={40} />
-        </motion.a>
+
+        <div className="group relative flex items-center justify-center">
+          <motion.div
+            onClick={() => setShowEmail(!showEmail)}
+            className="text-white-100 cursor-pointer transition-colors duration-300 hover:scale-110 hover:text-red-400"
+            {...fadeInFromLeft}
+            transition={{ ...fadeInFromLeft.transition, delay: 0.9 }}
+          >
+            <CiMail size={40} />
+          </motion.div>
+
+          {/* Tooltip on the left */}
+          <div
+            className={`absolute right-full mr-3 w-max rounded-md bg-white/90 px-3 py-1 text-sm text-black shadow-lg transition-opacity duration-200 ${showEmail ? "opacity-100" : "opacity-0"} group-hover:opacity-100`}
+          >
+            vincent.dinh401@gmail.com
+          </div>
+        </div>
       </div>
     </div>
   );

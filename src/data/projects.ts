@@ -35,7 +35,7 @@ const projects = [
     description:
       "A work-in-progress game developed by a team using Unreal Engine blueprints.",
     icons: [SiUnrealengine],
-    github: "https://https://github.com/HiImCVH/Unload",
+    github: "https://github.com/HiImCVH/Unload",
   },
   {
     title: "3D Shooter Game",

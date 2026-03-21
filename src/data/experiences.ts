@@ -1,7 +1,6 @@
 import acm from "../../public/icons/ACM.svg";
 import gamespawn from "../../public/icons/Gamespawn.svg";
 import ucr from "../../public/icons/UCR.svg";
-import bobaful from "../../public/icons/Bobaful.svg";
 
 const experiences = [
   {
@@ -42,18 +41,6 @@ const experiences = [
       "Utilizing Git and GitHub for version control and collaborative development.",
     ],
     icon: acm,
-  },
-  {
-    company: "Bobaful",
-    position: "Barista Trainer",
-    location: "Monterey Park, CA",
-    duration: "Aug 2023 - Jan 2025",
-    description: [
-      "Trained and onboarded new team members in drink preparation, customer service, and store operations, contributing to a more efficient and cohesive team.",
-      "Maintained high-quality standards in beverage crafting and food safety in a fast-paced environment.",
-      "Delivered excellent customer service through clear communication, adaptability, and multitasking during peak hours.",
-    ],
-    icon: bobaful,
   },
 ];
 
