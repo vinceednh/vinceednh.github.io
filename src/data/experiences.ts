@@ -7,7 +7,7 @@ const experiences = [
     company: "University of California, Riverside",
     position: "Teaching Assistant - Python Grader",
     location: "Riverside, CA",
-    duration: "Oct 2024 - Present",
+    duration: "Oct 2024 - Jan 2026",
     description: [
       "Grading Python assignments for introductory computer science courses with attention to code logic, readability, and efficiency using Gradescope.",
       "Importing and managing student grades between ZyBooks and Canvas to maintain accurate records.",

@@ -1,5 +1,7 @@
 import ue5 from "../../public/icons/Unreal.svg";
+import unity from "../../public/icons/Unity.svg";
 import cplusplus from "../../public/icons/C++.svg";
+import csharp from "../../public/icons/C-Sharp.svg";
 import python from "../../public/icons/Python.svg";
 import typescript from "../../public/icons/Typescript.svg";
 import react from "../../public/icons/REACT.svg";
@@ -13,23 +15,23 @@ import figma from "../../public/icons/Figma.svg";
 const skills = [
   {
     title: "Game Development",
-    list: "Unreal Engine 5, C++, Git, GitHub",
-    icons: [ue5, cplusplus, git, github],
+    list: "UE5, Unity 6, C++, C#",
+    icons: [ue5, unity, cplusplus, csharp],
   },
   {
     title: "Front-End & UI/UX",
-    list: "Next.js, React, Tailwind CSS, Figma",
-    icons: [nextjs, react, tailwind, figma],
+    list: "React, Next.js, TypeScript, Tailwind CSS, Figma",
+    icons: [react, nextjs, typescript, tailwind, figma],
   },
   {
     title: "Programming & Scripting",
-    list: "Python, TypeScript",
-    icons: [python, typescript],
+    list: "C++, C#, Python, TypeScript",
+    icons: [cplusplus, csharp, python, typescript],
   },
   {
     title: "Tooling & Collaboration",
-    list: "VS Code, Git, GitHub",
-    icons: [vscode, git, github],
+    list: "VS Code, Git, GitHub, Figma",
+    icons: [vscode, git, github, figma],
   },
 ];
 

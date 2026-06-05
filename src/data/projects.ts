@@ -1,8 +1,13 @@
+import superhawt from "@/public/projects/Superhawt.webp";
+import sisyphus from "@/public/projects/Sisyphus.webp";
 import acm from "@/public/projects/ACM.webp";
 import unload from "@/public/projects/Unload.webp";
 import shootergame from "@/public/projects/ShooterGame.webp";
+
+import { TbBrandCSharp } from "react-icons/tb";
 import {
   SiUnrealengine,
+  SiUnity,
   SiCplusplus,
   SiReact,
   SiNextdotjs,
@@ -13,6 +18,22 @@ import {
 } from "react-icons/si";
 
 const projects = [
+  {
+    title: "Superhawt",
+    image: superhawt,
+    description:
+      "A VR clone of Superhot built in Unity 6 with a team of 3. Features time-manipulation mechanics, VR hand tracking via Meta SDK, enemy AI with ragdoll physics, and rigged animations.",
+    icons: [SiUnity, TbBrandCSharp],
+    github: "https://github.com/vinceednh/project-superhot-vr",
+  },
+  {
+    title: "Sisyphus",
+    image: sisyphus,
+    description:
+      "A horror roguelike RPG built in Unity 6 with a team of 5. Play as a moth navigating a dark forest, lighting campfires to survive enemy waves.",
+    icons: [SiUnity, TbBrandCSharp],
+    github: "https://github.com/vinceednh/project-sisyphus",
+  },
   {
     title: "ACM Website",
     image: acm,

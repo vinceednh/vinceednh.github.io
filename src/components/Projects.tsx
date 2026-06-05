@@ -33,6 +33,8 @@ const Projects = () => {
   const slideRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   useEffect(() => {
     const updateProjectsPerPage = () => {
@@ -79,6 +81,19 @@ const Projects = () => {
     setPage((prev) => wrap(0, totalPages, prev - 1));
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? nextPage() : prevPage();
+    }
+  };
+
   return (
     <motion.div
       id="projects"
@@ -109,6 +124,8 @@ const Projects = () => {
         className="relative w-full overflow-hidden"
         style={{ height: containerHeight }}
         ref={containerRef}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
