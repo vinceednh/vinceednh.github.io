@@ -15,6 +15,7 @@ interface ProjectCardProps {
   icons: ElementType[];
   github?: string;
   link?: string;
+  award?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -24,6 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   icons,
   github,
   link,
+  award,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
@@ -55,6 +57,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <div className="overflow-hidden">
           <p className="text-3xl font-semibold break-words">{title}</p>
+          {award && (
+            <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-3 py-1 text-xs font-semibold text-black">
+              🏆 {award}
+            </div>
+          )}
           <p className="mt-2 text-sm break-words md:text-base">{description}</p>
 
           <div className="mt-3 flex flex-wrap gap-2 text-3xl">
