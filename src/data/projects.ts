@@ -21,6 +21,7 @@ const projects = [
   {
     title: "Superhawt",
     image: superhawt,
+    award: "Best Demo",
     description:
       "A VR clone of Superhot built in Unity 6 with a team of 3. Features time-manipulation mechanics, VR hand tracking via Meta SDK, enemy AI with ragdoll physics, and rigged animations.",
     icons: [SiUnity, TbBrandCSharp],
