@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, Transition } from "motion/react";
-import { wrap } from "@popmotion/popcorn";
 import projects from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
@@ -33,8 +32,6 @@ const Projects = () => {
   const slideRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
 
   useEffect(() => {
     const updateProjectsPerPage = () => {
@@ -72,26 +69,15 @@ const Projects = () => {
   }, []);
 
   const nextPage = () => {
+    if (page >= totalPages - 1) return;
     setDirection(1);
-    setPage((prev) => wrap(0, totalPages, prev + 1));
+    setPage((prev) => prev + 1);
   };
 
   const prevPage = () => {
+    if (page <= 0) return;
     setDirection(-1);
-    setPage((prev) => wrap(0, totalPages, prev - 1));
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX.current;
-
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? nextPage() : prevPage();
-    }
+    setPage((prev) => prev - 1);
   };
 
   return (
@@ -107,13 +93,15 @@ const Projects = () => {
         <div className="flex gap-4">
           <button
             onClick={prevPage}
-            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
+            disabled={page === 0}
+            className="cursor-pointer text-5xl transition-all duration-200 hover:text-blue-100 disabled:cursor-not-allowed disabled:opacity-30"
           >
             <FaCaretLeft />
           </button>
           <button
             onClick={nextPage}
-            className="cursor-pointer text-5xl transition-colors duration-200 hover:text-blue-100"
+            disabled={page === totalPages - 1}
+            className="cursor-pointer text-5xl transition-all duration-200 hover:text-blue-100 disabled:cursor-not-allowed disabled:opacity-30"
           >
             <FaCaretRight />
           </button>
@@ -124,8 +112,6 @@ const Projects = () => {
         className="relative w-full overflow-hidden"
         style={{ height: containerHeight }}
         ref={containerRef}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
       >
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
@@ -137,7 +123,17 @@ const Projects = () => {
             animate="active"
             exit="exit"
             transition={sliderTransition}
-            className="absolute top-0 left-0 grid w-full grid-cols-1 grid-rows-2 gap-6 pt-3 md:grid-cols-3 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-1"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={{
+              left: page === totalPages - 1 ? 0.05 : 0.2,
+              right: page === 0 ? 0.05 : 0.2,
+            }}
+            onDragEnd={(_, info) => {
+              if (info.offset.x < -50) nextPage();
+              else if (info.offset.x > 50) prevPage();
+            }}
+            className="absolute top-0 left-0 grid w-full cursor-grab grid-cols-1 grid-rows-2 gap-6 pt-3 active:cursor-grabbing md:grid-cols-3 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-1"
           >
             {currentProjects.map((project, index) => (
               <motion.div

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <div className="relative -mt-16 h-[350px] w-full md:h-[900px]">
+    <div className="relative -mt-16 h-[250px] w-full md:h-[850px]">
       <Image
         src="/home/home-banner.webp"
         alt="Banner"

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { FaLinkedin } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
@@ -18,16 +19,33 @@ const Intro = () => {
   return (
     <div className="text-white-100 relative flex flex-col items-center justify-between px-8 py-20 md:flex-row md:items-start md:px-16">
       <div className="flex max-w-xl flex-col gap-6">
-        <motion.h1 {...fadeInFromLeft} className="text-6xl font-bold">
-          Vincent Dinh
-        </motion.h1>
-        <motion.h2
-          {...fadeInFromLeft}
-          transition={{ ...fadeInFromLeft.transition, delay: 0.2 }}
-          className="color-blue-100 text-3xl font-semibold"
-        >
-          Game Programmer
-        </motion.h2>
+        <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
+          <motion.div
+            {...fadeInFromLeft}
+            transition={{ ...fadeInFromLeft.transition, delay: 0.1 }}
+            className="shrink-0"
+          >
+            <Image
+              src="/icons/profile.webp"
+              alt="Vincent Dinh"
+              width={96}
+              height={96}
+              className="mb-2 h-40 w-40 rounded-full object-cover ring-2 ring-white/20 md:mb-0 md:h-50 md:w-50"
+            />
+          </motion.div>
+          <div className="flex flex-col gap-2">
+            <motion.h1 {...fadeInFromLeft} className="text-6xl font-bold">
+              Vincent Dinh
+            </motion.h1>
+            <motion.h2
+              {...fadeInFromLeft}
+              transition={{ ...fadeInFromLeft.transition, delay: 0.2 }}
+              className="color-blue-100 text-3xl font-semibold"
+            >
+              Game Programmer
+            </motion.h2>
+          </div>
+        </div>
         <motion.p
           {...fadeInFromLeft}
           transition={{ ...fadeInFromLeft.transition, delay: 0.4 }}

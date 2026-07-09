@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
